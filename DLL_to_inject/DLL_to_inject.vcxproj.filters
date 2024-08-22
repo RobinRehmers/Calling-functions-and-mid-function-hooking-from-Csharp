@@ -15,28 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleMgr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AOBScan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="..\QuestStartDLL\calling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QuestStartDLL\Initialising.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QuestStartDLL\Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QuestStartDLL\ModuleMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ModuleMgr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Initialising.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="calling.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="..\QuestStartDLL\AOBScan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QuestStartDLL\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QuestStartDLL\ModuleMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

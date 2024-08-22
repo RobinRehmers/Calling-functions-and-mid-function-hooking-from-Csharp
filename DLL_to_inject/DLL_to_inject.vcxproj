@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{860fefdd-339f-47b0-a592-667aa01c972f}</ProjectGuid>
-    <RootNamespace>QuestStartDLL</RootNamespace>
+    <ProjectGuid>{34f4fcc1-c6a9-46f7-9ccb-15a797e79a29}</ProjectGuid>
+    <RootNamespace>DLLtoinject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,7 +44,6 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
-    <InterproceduralOptimization>false</InterproceduralOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -128,15 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AOBScan.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="ModuleMgr.cpp" />
+    <ClInclude Include="..\QuestStartDLL\calling.h" />
+    <ClInclude Include="..\QuestStartDLL\Initialising.h" />
+    <ClInclude Include="..\QuestStartDLL\Main.h" />
+    <ClInclude Include="..\QuestStartDLL\ModuleMgr.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="calling.h" />
-    <ClInclude Include="Initialising.h" />
-    <ClInclude Include="Main.h" />
-    <ClInclude Include="ModuleMgr.h" />
+    <ClCompile Include="..\QuestStartDLL\AOBScan.cpp" />
+    <ClCompile Include="..\QuestStartDLL\Main.cpp" />
+    <ClCompile Include="..\QuestStartDLL\ModuleMgr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
