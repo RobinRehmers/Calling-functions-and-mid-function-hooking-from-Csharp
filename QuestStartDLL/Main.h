@@ -3,7 +3,8 @@
 
 #include <Windows.h>
 
-extern DWORD64 questCallAddress;
+extern DWORD64 transformItemIDtoHashAddress;
+extern DWORD64 itemSpawnAddress;
 DWORD_PTR ArrayOfBytesScan(const char* szModule, const char* szSignature);
 
 #endif
