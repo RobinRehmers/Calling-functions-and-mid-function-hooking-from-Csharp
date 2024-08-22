@@ -1,6 +1,8 @@
 #include <Windows.h>
-#include "main.h"
-#include "calling.h"
+#include "Main.h"
+#include "Hooks.h"
+#include "Calling.h"
+
 #include "Initialising.h"
 
 

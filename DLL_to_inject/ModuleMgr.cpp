@@ -1,4 +1,4 @@
-#include "modulemgr.h"
+#include "Modulemgr.h"
 
 ModuleManager* ModMgr = new ModuleManager();
 
