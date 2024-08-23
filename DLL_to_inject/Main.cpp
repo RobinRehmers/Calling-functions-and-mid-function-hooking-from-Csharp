@@ -14,12 +14,22 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-    case DLL_THREAD_ATTACH:
         CreateThread(0, 0, Initialising, 0, 0, 0);
         break;
+    case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
         break;
     }
     return TRUE;
 }
+
+//DWORD WINAPI ItemSpawnThread(LPVOID lpParam)
+//{
+//	while (true)
+//	{		
+//		if (localplayer != 0)
+//			SpawnItemToInventory(itemSpawnAddress);
+//	}
+//	return 0;
+//}

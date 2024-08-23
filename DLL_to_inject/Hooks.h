@@ -1,7 +1,5 @@
 #include <Windows.h>
 
-
-
 __declspec(naked) void localplayerHook()
 {
 	__asm {
