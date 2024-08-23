@@ -24,11 +24,8 @@ DWORD WINAPI Initialising(LPVOID lpParam)
 	//It uses a function to transform the Item ID to the hash. this one we will call before.
 	transformItemIDtoHashAddress = ArrayOfBytesScan("SkyrimSE.exe", "40 57 48 83 EC 30 48 C7 44 24 20 FE FF FF FF 48 89 5C 24 40 48 89 74 24 58 8B F9");
 	
-	// this is the address to teh actual spawnfunction we will call after we received the item hash.
+	// this is the address to the actual spawnfunction we will call after we received the item hash in the SpawnItemToInventory function
 	itemSpawnAddress = ArrayOfBytesScan("SkyrimSE.exe", "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 4C 8B 51");
-
-	SpawnItemToInventory(itemSpawnAddress);
-	//CreateThread(0, 0, ItemSpawnThread, 0, 0, 0);
 
 	return NULL;
 }

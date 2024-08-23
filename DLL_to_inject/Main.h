@@ -12,7 +12,6 @@ extern DWORD64 localplayerAddress;
 extern DWORD64 jmpBack_localplayerAddress;
 extern int spawnamount;
 
-DWORD WINAPI ItemSpawnThread(LPVOID param);
 DWORD_PTR ArrayOfBytesScan(const char* szModule, const char* szSignature);
 bool Hook(void* toHook, void* hk_func, int len);
 

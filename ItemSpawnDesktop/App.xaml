@@ -1,7 +1,7 @@
-﻿<Application x:Class="QuestStartDesktop.App"
+﻿<Application x:Class="ItemSpawnDesktop.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:QuestStartDesktop"
+             xmlns:local="clr-namespace:ItemSpawnDesktop"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

@@ -23,13 +23,3 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     }
     return TRUE;
 }
-
-//DWORD WINAPI ItemSpawnThread(LPVOID lpParam)
-//{
-//	while (true)
-//	{		
-//		if (localplayer != 0)
-//			SpawnItemToInventory(itemSpawnAddress);
-//	}
-//	return 0;
-//}

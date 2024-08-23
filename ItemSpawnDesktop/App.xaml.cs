@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace QuestStartDesktop
+namespace ItemSpawnDesktop
 {
     /// <summary>
     /// Interaction logic for App.xaml
