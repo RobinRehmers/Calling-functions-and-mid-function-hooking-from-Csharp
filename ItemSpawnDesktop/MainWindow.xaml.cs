@@ -21,21 +21,15 @@ namespace ItemSpawnDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
-        [DllImport("kernel32.dll", SetLastError = true)]
-        private static extern IntPtr GetProcAddress(IntPtr hModule, string procedureName);
-
-        [DllImport("DLL_to_inject.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern void SpawnItemToInventory(int itemID, int spawnAmount);
-
-        [UnmanagedFunctionPointer(CallingConvention.FastCall)]
-        private delegate void MyExportedFunctionDelegate(int itemID, int spawnAmount);
-
         private int selectedItemID;
-        private bool isDllInjected = false;
 
         public MainWindow()
         {
             InitializeComponent();
+            string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName).FullName).FullName;
+            string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
+
+            DllInjector.InjectDll(dllPath, "SkyrimSE");
         }
 
         private void btnSword_Click(object sender, RoutedEventArgs e)
@@ -61,18 +55,7 @@ namespace ItemSpawnDesktop
             int spawnAmount;
             if (int.TryParse(txtSpawnAmount.Text, out spawnAmount))
             {
-                if (!isDllInjected)
-                {
-                    string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName).FullName).FullName;
-                    string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
-
-                    DllInjector.InjectDll(dllPath, "SkyrimSE");
-
-                    isDllInjected = true;
-                }
-
                 SpawnRequest.SendSpawnRequest(selectedItemID, spawnAmount);
-
             }
             else
             {

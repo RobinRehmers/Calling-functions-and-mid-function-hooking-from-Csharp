@@ -10,9 +10,9 @@ namespace InjectionLibrary
         {
             try
             {
-                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "MyNamedPipe", PipeDirection.Out))
+                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "SpawnPipe", PipeDirection.Out))
                 {                  
-                    pipeClient.Connect(5000);
+                    pipeClient.Connect(2000);
 
                     using (StreamWriter sw = new StreamWriter(pipeClient))
                     {
