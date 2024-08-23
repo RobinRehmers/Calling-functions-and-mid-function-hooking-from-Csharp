@@ -28,7 +28,7 @@ DWORD64 localplayer = 0x0;
 //	}
 //}
 
-__declspec(dllexport) void SpawnItemToInventory(int itemID, int spawnAmount)
+void SpawnItemToInventory(int itemID, int spawnAmount)
 {
 	while (true)
 	{

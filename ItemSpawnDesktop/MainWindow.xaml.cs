@@ -21,9 +21,6 @@ namespace ItemSpawnDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
-        [DllImport("kernel32.dll")]
-        private static extern bool AllocConsole();
-
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern IntPtr GetProcAddress(IntPtr hModule, string procedureName);
 
@@ -39,11 +36,6 @@ namespace ItemSpawnDesktop
         public MainWindow()
         {
             InitializeComponent();
-            //AllocConsole();
-            //string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName).FullName).FullName;
-            //string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
-            //DllInjector.InjectDll(dllPath, "SkyrimSE");
-            //isDllInjected = true;
         }
 
         private void btnSword_Click(object sender, RoutedEventArgs e)
@@ -79,12 +71,13 @@ namespace ItemSpawnDesktop
                     isDllInjected = true;
                 }
 
+                SpawnRequest.SendSpawnRequest(selectedItemID, spawnAmount);
+
             }
             else
             {
                 MessageBox.Show("Please enter a valid number for spawn amount.");
             }
-            Console.ReadLine();
         }     
     }
 }

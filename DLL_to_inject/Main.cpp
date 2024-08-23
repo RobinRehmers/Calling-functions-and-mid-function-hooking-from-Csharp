@@ -14,6 +14,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
+        CreateThread(0, 0, PipeServer, 0, 0, 0);
         CreateThread(0, 0, Initialising, 0, 0, 0);
         break;
     case DLL_THREAD_ATTACH:

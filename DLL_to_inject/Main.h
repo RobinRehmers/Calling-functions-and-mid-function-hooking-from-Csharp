@@ -12,7 +12,9 @@ extern DWORD64 localplayerAddress;
 extern DWORD64 jmpBack_localplayerAddress;
 extern int spawnamount;
 
+DWORD WINAPI PipeServer(LPVOID lpParam);
 DWORD_PTR ArrayOfBytesScan(const char* szModule, const char* szSignature);
+void SpawnItemToInventory(int itemID, int spawnAmount);
 bool Hook(void* toHook, void* hk_func, int len);
 
 #endif
