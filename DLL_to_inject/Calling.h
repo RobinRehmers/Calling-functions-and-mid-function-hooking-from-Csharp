@@ -1,6 +1,9 @@
 #ifndef CALLING
 #define CALLING_H
 
+#include <iostream>
+#include <string>
+
 bool firstspawncall = false;
 DWORD64 transformID = 0x0;
 DWORD64 localplayer = 0x0;
@@ -30,25 +33,21 @@ DWORD64 localplayer = 0x0;
 
 void SpawnItemToInventory(int itemID, int spawnAmount)
 {
-	while (true)
+	char buffer[256];
+	sprintf_s(buffer, "Testcall() executed with ItemID: %d, spawnAmount: %d \n", itemID, spawnAmount);
+	OutputDebugStringA(buffer);
+	/*if (localplayer != 0)
 	{
-		if (localplayer != 0)
-		{
-			if (!firstspawncall)
-			{
-				typedef void(__fastcall* TransformItemIDtoHash)(__int64 a);
-				TransformItemIDtoHash GetInteralID = (TransformItemIDtoHash)transformItemIDtoHashAddress;
-				GetInteralID(itemID);
-				__asm mov itemHash, rax
+		typedef void(__fastcall* TransformItemIDtoHash)(__int64 a);
+		TransformItemIDtoHash GetInteralID = (TransformItemIDtoHash)transformItemIDtoHashAddress;
+		GetInteralID(itemID);
+		__asm mov itemHash, rax
 
-				DWORD64 playerbase = (DWORD64)localplayer;
-				typedef void(__fastcall* _pFunc)(__int64 a, __int64 b, int c, int d, __int64 e);
-				_pFunc tarnung = (_pFunc)itemSpawnAddress;
-				tarnung(playerbase, itemHash, 0, spawnAmount, 0);
-				firstspawncall = true;
-			}
-		}
-	}
+		DWORD64 playerbase = (DWORD64)localplayer;
+		typedef void(__fastcall* _pFunc)(__int64 a, __int64 b, int c, int d, __int64 e);
+		_pFunc tarnung = (_pFunc)itemSpawnAddress;
+		tarnung(playerbase, itemHash, 0, spawnAmount, 0);
+	}*/
 }
 
 #endif

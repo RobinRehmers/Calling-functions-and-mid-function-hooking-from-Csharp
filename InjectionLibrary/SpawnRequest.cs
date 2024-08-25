@@ -1,37 +1,46 @@
 ﻿using System;
 using System.IO.Pipes;
 using System.IO;
+using System.Windows;
 
 namespace InjectionLibrary
 {
     public class SpawnRequest
     {
+        private NamedPipeClientStream pipeClient;
+        private StreamWriter sw;
+
         public static void SendSpawnRequest(int itemID, int spawnAmount)
         {
             try
             {
-                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "SpawnPipe", PipeDirection.Out))
-                {                  
-                    pipeClient.Connect(2000);
-
-                    using (StreamWriter sw = new StreamWriter(pipeClient))
-                    {
-                        sw.WriteLine($"{itemID} {spawnAmount}");
-                        sw.Flush();
-                    }
+                if (pipeClient.IsConnected)
+                {
+                    sw.WriteLine($"{itemID} {spawnAmount}");
+                    sw.Flush();
                 }
-            }
-            catch (TimeoutException ex)
-            {
-                Console.WriteLine("Timeout beim Verbindungsaufbau zum Pipe-Server: " + ex.Message);
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine("Ein IO-Fehler ist aufgetreten: " + ex.Message);
+                else
+                {
+                    MessageBox.Show("Pipe is not connected.");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ein unerwarteter Fehler ist aufgetreten: " + ex.Message);
+                MessageBox.Show($"Error communicating with pipe: {ex.Message}");
+            }
+        }
+
+        public static void InitializePipeClient()
+        {
+            pipeClient = new NamedPipeClientStream(".", "SkyrimPipe", PipeDirection.Out);
+            try
+            {
+                pipeClient.Connect();
+                sw = new StreamWriter(pipeClient);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to connect to pipe: {ex.Message}");
             }
         }
     }

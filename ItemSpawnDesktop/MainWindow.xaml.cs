@@ -16,9 +16,6 @@ using System.Diagnostics;
 
 namespace ItemSpawnDesktop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private int selectedItemID;
@@ -30,6 +27,8 @@ namespace ItemSpawnDesktop
             string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
 
             DllInjector.InjectDll(dllPath, "SkyrimSE");
+
+            SpawnRequest.InitializePipeClient();
         }
 
         private void btnSword_Click(object sender, RoutedEventArgs e)
