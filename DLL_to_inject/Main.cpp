@@ -2,9 +2,7 @@
 #include "Main.h"
 #include "Hooks.h"
 #include "Calling.h"
-
 #include "Initialising.h"
-
 
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
