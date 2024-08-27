@@ -10,14 +10,14 @@ using System.Security.Principal;
 
 namespace InjectionLibrary.Tests
 {
-    public class SpawnRequestTests
+    public class InjectionTests
     {
         private const string ProcessName = "SkyrimSE";
         private const string DllName = "DLL_to_inject.dll";
         private const string PipeName = "SkyrimPipe";
         private static bool isDllInjected = false;
 
-        public SpawnRequestTests()
+        public InjectionTests()
         {
             if (!isDllInjected)
             {
