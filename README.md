@@ -25,6 +25,7 @@ I was able to write a custom DLL that interacts with these functions and effecti
 • **Item Spawning:** Implemented item spawning functionality by interacting directly with the game's internal functions.<br />
 • **Inter-process Communication (IPC):** Used Named Pipes for communication between the external WPF application and the injected DLL.<br />
 • **WPF Application:** Interface to select items and spawn them in-game.<br />
+• **xUnit Tests:** Implemented xUnit tests to verify the DLL injection process and to ensure the reliability of the Named Pipe connection.
 
 
 ### Technologies Used<br />
@@ -33,3 +34,4 @@ I was able to write a custom DLL that interacts with these functions and effecti
 • **C# (WPF):** For developing the external application that interacts with the game.<br />
 • **Reverse Engineering Tools:** Used tools like IDA Pro and x64dbg to analyze the executable and memory structure.<br />
 • **Windows API:** Utilized for DLL injection and IPC.<br />
+• **xUnit:** For testing the DLL injection and verifying the Named Pipe connection between the external application and the injected DLL.
