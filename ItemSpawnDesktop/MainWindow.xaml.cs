@@ -23,12 +23,34 @@ namespace ItemSpawnDesktop
         public MainWindow()
         {
             InitializeComponent();
-            string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).FullName).FullName).FullName).FullName).FullName;
-            string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
+            if (Environment.GetEnvironmentVariable("IS_TEST_EXECUTION") != "true")
+            {
+                string solutionDirectory = GetSolutionDirectory();
+                string dllPath = System.IO.Path.Combine(solutionDirectory, @"x64\Debug\DLL_to_inject.dll");
 
-            DllInjector.InjectDll(dllPath, "SkyrimSE");
+                if (!File.Exists(dllPath))
+                {
+                    throw new FileNotFoundException($"DLL not found at path: {dllPath}");
+                }
 
-            SpawnRequest.InitializePipeClient();
+                DllInjector.InjectDll(dllPath, "SkyrimSE");
+
+                SpawnRequest.InitializePipeClient();
+            }
+        }
+
+        private string GetSolutionDirectory()
+        {
+            DirectoryInfo directory = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            while (directory != null && !directory.GetFiles("*.sln").Any())
+            {
+                directory = directory.Parent;
+            }
+            if (directory == null)
+            {
+                throw new DirectoryNotFoundException("Solution directory not found.");
+            }
+            return directory.FullName;
         }
 
         private void btnSword_Click(object sender, RoutedEventArgs e)

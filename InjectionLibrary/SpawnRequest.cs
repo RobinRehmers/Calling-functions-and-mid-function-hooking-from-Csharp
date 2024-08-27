@@ -7,7 +7,7 @@ namespace InjectionLibrary
 {
     public class SpawnRequest
     {
-        private static NamedPipeClientStream pipeClient;
+        public static NamedPipeClientStream pipeClient;
         private static StreamWriter sw;
 
         public static void SendSpawnRequest(int itemID, int spawnAmount)

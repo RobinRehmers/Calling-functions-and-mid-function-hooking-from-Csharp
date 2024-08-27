@@ -5,9 +5,11 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL_to_inject", "DLL_to_inject\DLL_to_inject.vcxproj", "{34F4FCC1-C6A9-46F7-9CCB-15A797E79A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemSpawnDesktop", "ItemSpawnDesktop\ItemSpawnDesktop.csproj", "{EC391739-EF5A-4DBB-8C68-FC6AB68F3176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItemSpawnDesktop", "ItemSpawnDesktop\ItemSpawnDesktop.csproj", "{EC391739-EF5A-4DBB-8C68-FC6AB68F3176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionLibrary", "InjectionLibrary\InjectionLibrary.csproj", "{6F5C890D-7DA2-430A-A102-0E94CF1821EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InjectionLibrary", "InjectionLibrary\InjectionLibrary.csproj", "{6F5C890D-7DA2-430A-A102-0E94CF1821EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionLibrary.Tests", "InjectionLibrary.Tests\InjectionLibrary.Tests.csproj", "{E7063F82-7D37-4AB1-B864-46C83BEA03E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{6F5C890D-7DA2-430A-A102-0E94CF1821EC}.Release|x64.Build.0 = Release|Any CPU
 		{6F5C890D-7DA2-430A-A102-0E94CF1821EC}.Release|x86.ActiveCfg = Release|Any CPU
 		{6F5C890D-7DA2-430A-A102-0E94CF1821EC}.Release|x86.Build.0 = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|x64.Build.0 = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7063F82-7D37-4AB1-B864-46C83BEA03E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
