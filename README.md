@@ -1,6 +1,6 @@
 # Function calling and hooking in Csharp
 
-The project's goal was to reverse engineer and manipulate game memory in the RPG "The Elder Scrolls V: Skyrim". The main objective of this project is to inject a DLL into the game, which allows for spawning items directly into the player's inventory through an external WPF application.<br />
+The project's goal was to reverse engineer and manipulate game memory in the RPG "The Elder Scrolls V: Skyrim". The main objective is to inject a DLL into the game, which allows for spawning items directly into the player's inventory through an external WPF application.<br />
 
 
 ## Reverse Engineering Process<br />
