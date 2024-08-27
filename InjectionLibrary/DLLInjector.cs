@@ -47,11 +47,15 @@ namespace InjectionLibrary
 
         public static void InjectDll(string dllPath, string processName)
         {
-            Process process = Process.GetProcessesByName(processName)[0];
-            if (process == null)
+            Process process = null;
+            while (process == null)
             {
-                MessageBox.Show("Process not found!");
-                return;
+                process = Process.GetProcessesByName(processName).FirstOrDefault();
+                if (process == null)
+                {
+                    MessageBox.Show("Cant find the games process. Please start 'The Elder Scrolls V: Skyrim' and hit 'OK'.");
+                    Thread.Sleep(2000);
+                }
             }
             int processId = process.Id;
 

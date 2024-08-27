@@ -60,6 +60,16 @@ namespace ItemSpawnDesktop
             {
                 MessageBox.Show("Please enter a valid number for spawn amount.");
             }
-        }     
+        }
+
+        private void txtSpawnAmount_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+
+        private static bool IsTextAllowed(string text)
+        {
+            return text.All(char.IsDigit);
+        }
     }
 }
