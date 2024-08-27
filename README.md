@@ -5,7 +5,7 @@ The project's goal was to reverse engineer and manipulate game memory in the RPG
 
 ## Reverse Engineering Process<br />
 
-I reverse-engineered key aspects of Skyrim to locate the memory address of the localplayer and identified the functions responsible for item spawning. During the reverse engineering process with different tools, I discovered that one function in Skyrim takes an itemID as an argument, transforms it into an itemHash, and another function utilizes this itemHash to spawn the item into the game world. <br />
+I reverse-engineered key aspects of Skyrim to locate the memory address of the localplayer and identified the functions responsible for item spawning. During the reverse engineering process with different tools, I discovered that one function in Skyrim takes an itemID as an argument, transforms it into an itemhash, and another function utilizes this itemhash to spawn the item into the game world. <br />
 I was able to write a custom DLL that interacts with these functions and effectively spawns items.<br />
 
 
