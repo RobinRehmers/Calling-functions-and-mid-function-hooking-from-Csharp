@@ -7,7 +7,6 @@
 
 DWORD_PTR ArrayOfBytesScan(const char* szModule, const char* szSignature)
 {
-
     MODULEINFO modInfo;
     GetModuleInformation(GetCurrentProcess(), GetModuleHandleA(szModule), &modInfo, sizeof(MODULEINFO));
     DWORD_PTR startAddress = (DWORD_PTR)GetModuleHandleA(szModule);

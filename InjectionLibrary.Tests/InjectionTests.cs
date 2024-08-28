@@ -14,7 +14,6 @@ namespace InjectionLibrary.Tests
     {
         private const string ProcessName = "SkyrimSE";
         private const string DllName = "DLL_to_inject.dll";
-        private const string PipeName = "SkyrimPipe";
         private static bool isDllInjected = false;
 
         public InjectionTests()
