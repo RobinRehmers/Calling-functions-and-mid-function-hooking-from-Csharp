@@ -3,10 +3,8 @@
 
 #include <Windows.h>
 
-
 DWORD64 transformItemIDtoHashAddress = 0;
 DWORD64 itemSpawnAddress = 0;
-
 DWORD64 itemHash = 0;
 DWORD64 localplayerAddress;
 DWORD64 jmpBack_localplayerAddress = 0;

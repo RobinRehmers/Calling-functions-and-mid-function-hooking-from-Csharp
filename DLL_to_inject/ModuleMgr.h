@@ -2,7 +2,6 @@
 #define _MOD_MANAGER_H
 
 #pragma once
-
 #include <Windows.h>
 #include <Psapi.h>
 
