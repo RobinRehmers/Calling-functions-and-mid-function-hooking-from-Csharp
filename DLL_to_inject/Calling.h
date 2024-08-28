@@ -10,9 +10,6 @@ DWORD64 localplayer = 0x0;
 
 void SpawnItemToInventory(int itemID, int spawnAmount)
 {
-	//char buffer[256];
-	//sprintf_s(buffer, "Testcall() executed with ItemID: %d, spawnAmount: %d \n", itemID, spawnAmount);
-	//OutputDebugStringA(buffer);
 	if (localplayer != 0)
 	{
 		typedef void(__fastcall* TransformItemIDtoHash)(__int64 a);
