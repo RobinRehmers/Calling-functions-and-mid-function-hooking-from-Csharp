@@ -1,15 +1,10 @@
+#ifndef HOOKS_H
+#define HOOKS_H
+
 #include <Windows.h>
 
-__declspec(naked) void localplayerHook()
-{
-	__asm {
-		pop rax
+void localplayerHook();
 
-		movss xmm1, [rbx + 0x5C]
-		subss xmm1, [rdi + 0x5C]
-		movss xmm0, [rbx + 0x58]
-		mov[localplayer], rdi
-	
-		jmp[jmpBack_localplayerAddress]
-	}
-}
+bool Hook(void* toHook, void* hk_func, int len);
+
+#endif

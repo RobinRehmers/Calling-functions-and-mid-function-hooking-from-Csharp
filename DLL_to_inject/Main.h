@@ -9,7 +9,8 @@ extern DWORD64 itemSpawnAddress;
 extern DWORD64 transformID;
 extern DWORD64 itemHash;
 extern DWORD64 localplayerAddress;
-extern DWORD64 jmpBack_localplayerAddress;
+extern DWORD64 jmpBack;
+
 extern int spawnamount;
 
 DWORD WINAPI PipeServer(LPVOID lpParam);
