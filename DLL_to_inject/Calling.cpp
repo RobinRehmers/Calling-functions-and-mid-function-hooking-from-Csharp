@@ -8,7 +8,7 @@ DWORD64 GetItemIDMemAddr(int itemID)
     return LookupID(itemID);
 }
 
-void SpawnItemInInventory(DWORD64 playerBase, DWORD64 itemIDMemAddr, int spawnAmount)
+void SpawnItem(DWORD64 playerBase, DWORD64 itemIDMemAddr, int spawnAmount)
 {
     typedef void(__fastcall* SpawnItem)(__int64 a, __int64 b, int c, int d, __int64 e);
     SpawnItem Spawn = (SpawnItem)getItemSpawnAddress();
@@ -20,6 +20,6 @@ void SpawnItemToInventory(int itemID, int spawnAmount)
     if (localplayer != 0)
     {
         DWORD64 itemIDMemAddr = GetItemIDMemAddr(itemID);
-        SpawnItemInInventory(localplayer, itemIDMemAddr, spawnAmount);
+        SpawnItem(localplayer, itemIDMemAddr, spawnAmount);
     }
 }

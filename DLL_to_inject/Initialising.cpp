@@ -3,7 +3,6 @@
 #include "Hooks.h"
 #include "Main.h"
 
-
 DWORD WINAPI Initialising(LPVOID lpParam)
 {
     DWORD64 localplayerAddr = ArrayOfBytesScan("SkyrimSE.exe", "0F 85 FF 01 00 00 F3 0F 10 4B 5C F3 0F 5C 4F 5C F3 0F 10 43 58 F3 0F 5C 47 58 F3 0F 10 73 54 F3 0F 5C 77 54 F3 0F 59 F6");

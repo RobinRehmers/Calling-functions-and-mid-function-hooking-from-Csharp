@@ -61,10 +61,10 @@ namespace InjectionLibrary.Tests
         [Fact]
         public void TestPipeConnection()
         {
-            SpawnRequest.InitializePipeClient();
+            var spawnRequest = SpawnRequest.Instance;
 
-            Assert.NotNull(SpawnRequest.pipeClient);
-            Assert.True(SpawnRequest.pipeClient.IsConnected);
+            Assert.NotNull(spawnRequest.PipeClient);
+            Assert.True(spawnRequest.PipeClient.IsConnected);
         }
     }
 }

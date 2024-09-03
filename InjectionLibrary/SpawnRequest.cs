@@ -7,17 +7,56 @@ namespace InjectionLibrary
 {
     public class SpawnRequest
     {
-        public static NamedPipeClientStream pipeClient;
-        private static StreamWriter sw;
+        private static SpawnRequest _instance;
+        private static readonly object _lock = new object();
+        public NamedPipeClientStream PipeClient { get; private set; }
+        private StreamWriter _sw;
 
-        public static void SendSpawnRequest(int itemID, int spawnAmount)
+        private SpawnRequest()
+        {
+            InitializePipeClient();
+        }
+
+        public static SpawnRequest Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new SpawnRequest();
+                        }
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        private void InitializePipeClient()
+        {
+            PipeClient = new NamedPipeClientStream(".", "SkyrimPipe", PipeDirection.Out);
+            try
+            {
+                PipeClient.Connect();
+                _sw = new StreamWriter(PipeClient);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to connect to pipe: {ex.Message}");
+            }
+        }
+
+        public void SendSpawnRequest(int itemID, int spawnAmount)
         {
             try
             {
-                if (pipeClient.IsConnected)
+                if (PipeClient.IsConnected)
                 {
-                    sw.WriteLine($"{itemID} {spawnAmount}");
-                    sw.Flush();
+                    _sw.WriteLine($"{itemID} {spawnAmount}");
+                    _sw.Flush();
                 }
                 else
                 {
@@ -27,20 +66,6 @@ namespace InjectionLibrary
             catch (Exception ex)
             {
                 MessageBox.Show($"Error communicating with pipe: {ex.Message}");
-            }
-        }
-
-        public static void InitializePipeClient()
-        {
-            pipeClient = new NamedPipeClientStream(".", "SkyrimPipe", PipeDirection.Out);
-            try
-            {
-                pipeClient.Connect();
-                sw = new StreamWriter(pipeClient);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to connect to pipe: {ex.Message}");
             }
         }
     }

@@ -20,7 +20,6 @@ bool Hook(void* toHook, void* hk_func, int len) {
     return true;
 }
 
-
 __declspec(naked) void localplayerHook()
 {
     __asm {

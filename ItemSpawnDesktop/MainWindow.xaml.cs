@@ -35,7 +35,7 @@ namespace ItemSpawnDesktop
 
                 DllInjector.InjectDll(dllPath, "SkyrimSE");
 
-                SpawnRequest.InitializePipeClient();
+                var spawnRequest = SpawnRequest.Instance;
             }
         }
 
@@ -76,13 +76,15 @@ namespace ItemSpawnDesktop
             int spawnAmount;
             if (int.TryParse(txtSpawnAmount.Text, out spawnAmount))
             {
-                SpawnRequest.SendSpawnRequest(selectedItemID, spawnAmount);
+                // Verwenden der Singleton-Instanz von SpawnRequest
+                SpawnRequest.Instance.SendSpawnRequest(selectedItemID, spawnAmount);
             }
             else
             {
                 MessageBox.Show("Please enter a valid number for spawn amount.");
             }
         }
+
 
         private void txtSpawnAmount_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
