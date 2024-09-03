@@ -7,9 +7,7 @@
 DWORD WINAPI Initialising(LPVOID lpParam)
 {
     DWORD64 localplayerAddr = ArrayOfBytesScan("SkyrimSE.exe", "0F 85 FF 01 00 00 F3 0F 10 4B 5C F3 0F 5C 4F 5C F3 0F 10 43 58 F3 0F 5C 47 58 F3 0F 10 73 54 F3 0F 5C 77 54 F3 0F 59 F6");
-    //setLocalPlayerAddress(localplayerAddr + 6);
-	localplayerAddr = localplayerAddr + 6;
-    //setJmpBackLocalPlayerAddress(localplayerAddr + 15);
+	localplayerAddr += 6;
     jmpBack = localplayerAddr + 15;
     Hook((void*)localplayerAddr, localplayerHook, 15);
 

@@ -1,5 +1,5 @@
-#include "Calling.h"
 #include "Globals.h"
+#include "Calling.h"
 
 DWORD64 GetItemIDMemAddr(int itemID)
 {
@@ -17,10 +17,9 @@ void SpawnItemInInventory(DWORD64 playerBase, DWORD64 itemIDMemAddr, int spawnAm
 
 void SpawnItemToInventory(int itemID, int spawnAmount)
 {
-    if (getLocalPlayer() != 0)
+    if (localplayer != 0)
     {
         DWORD64 itemIDMemAddr = GetItemIDMemAddr(itemID);
-        DWORD64 playerBase = getLocalPlayer();
-        SpawnItemInInventory(playerBase, itemIDMemAddr, spawnAmount);
+        SpawnItemInInventory(localplayer, itemIDMemAddr, spawnAmount);
     }
 }

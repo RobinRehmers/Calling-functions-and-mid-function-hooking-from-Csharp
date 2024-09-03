@@ -9,7 +9,6 @@ bool Hook(void* toHook, void* hk_func, int len) {
     DWORD curProtection;
     VirtualProtect(toHook, len, PAGE_EXECUTE_READWRITE, &curProtection);
 
-    // Filling with NOPs our future jmp
     unsigned char patch[] = {
         0x50, 0x48, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
         0xFF, 0xE0
@@ -21,7 +20,7 @@ bool Hook(void* toHook, void* hk_func, int len) {
     return true;
 }
 
-DWORD64 jmpBack;
+
 __declspec(naked) void localplayerHook()
 {
     __asm {
@@ -30,7 +29,8 @@ __declspec(naked) void localplayerHook()
         movss xmm1, [rbx + 0x5C]
         subss xmm1, [rdi + 0x5C]
         movss xmm0, [rbx + 0x58]
-        //mov getLocalPlayerAddress(), rdi
+        mov localplayer, rdi
+
         jmp[jmpBack]
     }
 }
