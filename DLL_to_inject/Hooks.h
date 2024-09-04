@@ -4,7 +4,9 @@
 #include <Windows.h>
 
 void localplayerHook();
-
 bool Hook(void* toHook, void* hk_func, int len);
+
+extern DWORD64 jmpBack;
+extern DWORD64 localplayer;
 
 #endif

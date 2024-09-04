@@ -5,7 +5,7 @@
 #define GET_BYTE( x )    (GET_BITS(x[0]) << 4 | GET_BITS(x[1]))
 #define GET_BITS( x ) (INRANGE((x&(~0x20)),'A','F') ? ((x&(~0x20)) - 'A' + 0xa) : (INRANGE(x,'0','9') ? x - '0' : 0))
 
-DWORD_PTR ArrayOfBytesScan(const char* szModule, const char* szSignature)
+DWORD_PTR ArrayOfBytes(const char* szModule, const char* szSignature)
 {
     MODULEINFO modInfo;
     GetModuleInformation(GetCurrentProcess(), GetModuleHandleA(szModule), &modInfo, sizeof(MODULEINFO));

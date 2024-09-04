@@ -5,19 +5,8 @@
 
 extern DWORD64 jmpBack;
 extern DWORD64 localplayer;
+extern DWORD64 localplayerAddr;
 
-DWORD64 getLookupItemIDMemAddr();
-DWORD64 getItemSpawnAddress();
-DWORD64 getTransformID();
-DWORD64 getItemHash();
-DWORD64 getJmpBackLocalPlayerAddress();
-int getSpawnAmount();
-
-void setLookupItemIDMemAddr(DWORD64 value);
-void setItemSpawnAddress(DWORD64 value);
-void setTransformID(DWORD64 value);
-void setItemHash(DWORD64 value);
-void setJmpBackLocalPlayerAddress(DWORD64 value);
-void setSpawnAmount(int value);
+DWORD_PTR ArrayOfBytes(const char* szModule, const char* szSignature);
 
 #endif

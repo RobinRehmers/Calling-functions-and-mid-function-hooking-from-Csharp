@@ -15,48 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calling.h">
+    <ClInclude Include="PipeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Initialising.h">
+    <ClInclude Include="MemoryReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Main.h">
+    <ClInclude Include="GameFuncCaller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleMgr.h">
+    <ClInclude Include="SpawnManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Hooks.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
+    <ClInclude Include="HookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AOBScan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleMgr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Hook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PipeServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Initialising.cpp">
+    <ClCompile Include="MemoryReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Calling.cpp">
+    <ClCompile Include="GameFuncCaller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Globals.cpp">
+    <ClCompile Include="SpawnManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,16 +20,20 @@ bool Hook(void* toHook, void* hk_func, int len) {
     return true;
 }
 
-__declspec(naked) void localplayerHook()
-{
-    __asm {
-        pop rax
+//__declspec(naked) void localplayerHook() {
+//    __asm {
+//        pop rax
+//
+//        movss xmm1, [rbx + 0x5C]
+//        subss xmm1, [rdi + 0x5C]
+//        movss xmm0, [rbx + 0x58]
+//        // Speichern des Werts von rdi in der globalen Variable localplayer
+//        mov rax, rdi
+//        mov localplayer, rax
+//
+//        // Laden der jmpBack-Adresse in rax und Springen zu dieser Adresse
+//        mov rax, jmpBack
+//        jmp rax
+//    }
+//}
 
-        movss xmm1, [rbx + 0x5C]
-        subss xmm1, [rdi + 0x5C]
-        movss xmm0, [rbx + 0x58]
-        mov localplayer, rdi
-
-        jmp[jmpBack]
-    }
-}

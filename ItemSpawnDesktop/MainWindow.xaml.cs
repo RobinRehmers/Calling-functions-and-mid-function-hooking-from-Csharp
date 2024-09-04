@@ -76,7 +76,6 @@ namespace ItemSpawnDesktop
             int spawnAmount;
             if (int.TryParse(txtSpawnAmount.Text, out spawnAmount))
             {
-                // Verwenden der Singleton-Instanz von SpawnRequest
                 SpawnRequest.Instance.SendSpawnRequest(selectedItemID, spawnAmount);
             }
             else
